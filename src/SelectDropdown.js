@@ -53,6 +53,7 @@ const SelectDropdown = (
     renderSearchInputLeftIcon /* function returns React component for search input icon */,
     renderSearchInputRightIcon /* function returns React component for search input icon */,
     onChangeSearchInputText /* function callback when the search input text changes, this will automatically disable the dropdown's interna search to be implemented manually outside the component  */,
+    dropDownHeader,
   },
   ref,
 ) => {
@@ -178,7 +179,7 @@ const SelectDropdown = (
               renderItem={renderFlatlistItem}
               getItemLayout={getItemLayout}
               onLayout={onLayout}
-              ListHeaderComponent={renderSearchView()}
+              ListHeaderComponent={dropDownHeader}
               stickyHeaderIndices={search && [0]}
               keyboardShouldPersistTaps="always"
               onEndReached={() => onScrollEndReached && onScrollEndReached()}
