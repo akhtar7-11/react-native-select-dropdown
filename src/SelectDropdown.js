@@ -54,6 +54,7 @@ const SelectDropdown = (
     renderSearchInputRightIcon /* function returns React component for search input icon */,
     onChangeSearchInputText /* function callback when the search input text changes, this will automatically disable the dropdown's interna search to be implemented manually outside the component  */,
     dropDownHeader,
+    containerStyle
   },
   ref,
 ) => {
@@ -174,6 +175,7 @@ const SelectDropdown = (
           <DropdownWindow layoutStyle={dropdownWindowStyle}>
             <FlatList
               data={dataArr}
+              style={containerStyle}
               keyExtractor={(item, index) => index.toString()}
               ref={dropDownFlatlistRef}
               renderItem={renderFlatlistItem}
