@@ -172,10 +172,9 @@ const SelectDropdown = (
       isVisible && (
         <DropdownModal statusBarTranslucent={statusBarTranslucent} visible={isVisible} onRequestClose={onRequestClose}>
           <DropdownOverlay onPress={closeDropdown} backgroundColor={dropdownOverlayColor} />
-          <DropdownWindow layoutStyle={dropdownWindowStyle}>
+          <DropdownWindow layoutStyle={[dropdownWindowStyle,containerStyle]}>
             <FlatList
               data={dataArr}
-              style={containerStyle}
               keyExtractor={(item, index) => index.toString()}
               ref={dropDownFlatlistRef}
               renderItem={renderFlatlistItem}
